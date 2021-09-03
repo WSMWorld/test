@@ -1,0 +1,32 @@
+#Provider Type Defination block  
+
+provider "google" {
+     credentials = file("gcp-terraform.json")
+     project     = "gcp-terraform-322906"
+     region      = "asia-south1"
+     zone        = "asia-south1-a"
+}       
+
+#Defination blocks of the resources of provider 
+resource "google_compute_instance" "pankaj" {
+  name         = "test"
+  machine_type = "e2-micro"
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
+  }
+
+  #terraform taint google_compute_instance.defult"
+
+#Network Block of vpc initialization .
+  network_interface {
+    network = "default"
+
+    access_config {
+      // Ephemeral IP
+    }
+  }
+}
+
