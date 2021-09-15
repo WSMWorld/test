@@ -2,8 +2,8 @@
 //define a provider : is actually provides us set of code so that communication could be possible with API  //
 provider "aws" {
   region  = "ap-south-1"
-  access_key = "AKIA5MMZLGV35HSRAY7G"
-   secret_key = "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"
+  access_key = "X"
+   secret_key = "X"
  }
 
 //This is the first instance initialization block//
